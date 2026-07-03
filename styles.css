@@ -1,0 +1,429 @@
+:root {
+    --primary-color: #e65c00;
+    --secondary-color: #f5f7fa;
+    --text-dark: #2c3e50;
+    --text-light: #ffffff;
+    --accent-color: #27ae60;
+    --error-color: #d32f2f;
+    --border-radius: 5px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: #fff;
+}
+
+/* ================== HEADER & NAVIGATION ================== */
+header {
+    background: var(--text-light);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 8px 0;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus {
+    color: var(--primary-color);
+    outline: none;
+}
+
+.cta-btn {
+    background: var(--primary-color);
+    color: var(--text-light) !important;
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.cta-btn:hover,
+.cta-btn:focus {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* ================== MAIN CONTENT ================== */
+main {
+    min-height: calc(100vh - 80px);
+}
+
+.section {
+    display: none;
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================== TYPOGRAPHY ================== */
+.subhead {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    border-left: 5px solid var(--primary-color);
+    padding-left: 15px;
+    text-align: left;
+}
+
+.text-block {
+    font-size: 18px;
+    max-width: 340px;
+    text-align: left;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.text-long {
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* ================== SLIDER ================== */
+.slider-container {
+    position: relative;
+    height: 350px;
+    background: #ddd;
+    margin-bottom: 40px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    padding: 20px;
+    text-align: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide:nth-child(1) {
+    background: linear-gradient(135deg, #e65c00, #f9d423);
+}
+
+.slide:nth-child(2) {
+    background: linear-gradient(135deg, #1f4068, #162447);
+}
+
+.slide:nth-child(3) {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+/* ================== PROFILE SECTION ================== */
+.profile-flex {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.profile-img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+}
+
+/* ================== TABLES ================== */
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.price-table th,
+.price-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.price-table th {
+    background-color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.price-table tbody tr:hover {
+    background-color: rgba(230, 92, 0, 0.05);
+}
+
+/* ================== TESTIMONIAL ================== */
+.testimonial {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.testimonial-title {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/* ================== FORMS ================== */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(230, 92, 0, 0.3);
+}
+
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+    border-color: var(--error-color);
+}
+
+.error-message {
+    display: block;
+    color: var(--error-color);
+    font-size: 12px;
+    margin-top: 4px;
+    min-height: 16px;
+}
+
+.captcha-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    flex-wrap: wrap;
+}
+
+/* ================== FOOTER ================== */
+footer {
+    background: var(--text-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+/* ================== RESPONSIVE DESIGN ================== */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .subhead {
+        font-size: 24px;
+    }
+
+    .profile-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-img {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .slider-container {
+        height: 250px;
+    }
+
+    .slide {
+        font-size: 18px;
+    }
+
+    .text-block {
+        max-width: 100%;
+    }
+
+    .captcha-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .captcha-box input {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 40px 15px;
+    }
+
+    .nav-container {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .subhead {
+        font-size: 20px;
+    }
+
+    .text-block {
+        font-size: 16px;
+    }
+
+    .slider-container {
+        height: 200px;
+    }
+
+    .price-table th,
+    .price-table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+/* ================== ACCESSIBILITY ================== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+
+    header {
+        background-color: #2a2a2a;
+        color: #e0e0e0;
+    }
+
+    .nav-menu a {
+        color: #e0e0e0;
+    }
+
+    .price-table {
+        color: #e0e0e0;
+    }
+
+    .price-table th,
+    .price-table td {
+        border-color: #555;
+    }
+
+    .testimonial {
+        background-color: #2a2a2a;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        background-color: #333;
+        border-color: #555;
+        color: #e0e0e0;
+    }
+}
