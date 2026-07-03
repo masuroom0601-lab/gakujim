@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Random Joke Generator - Get fresh jokes from an external API">
+    <title>Random Joke Generator 😂</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>😂 Random Joke Generator</h1>
+            <p class="subtitle">Click the button below to get a random joke!</p>
+        </header>
+
+        <main>
+            <div class="joke-card">
+                <div id="joke-container" class="joke-text">
+                    <p id="joke-content" class="placeholder">Click "Get Joke" to start...</p>
+                </div>
+                
+                <div class="joke-meta">
+                    <span id="joke-type" class="joke-type"></span>
+                    <span id="joke-category" class="joke-category"></span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="get-joke-btn" class="btn btn-primary" aria-label="Get a random joke">
+                    🎲 Get Joke
+                </button>
+                <button id="copy-btn" class="btn btn-secondary" aria-label="Copy joke to clipboard" disabled>
+                    📋 Copy
+                </button>
+                <button id="share-btn" class="btn btn-secondary" aria-label="Share joke" disabled>
+                    🔗 Share
+                </button>
+            </div>
+
+            <div class="filters">
+                <label for="category-filter">Filter by Category:</label>
+                <select id="category-filter" aria-label="Select joke category">
+                    <option value="any">Any Category</option>
+                    <option value="general">General</option>
+                    <option value="knock-knock">Knock-Knock</option>
+                    <option value="programming">Programming</option>
+                </select>
+            </div>
+
+            <div id="loading" class="loading" aria-live="polite" aria-atomic="true">
+                <div class="spinner"></div>
+                <p>Fetching a joke...</p>
+            </div>
+
+            <div id="error" class="error" role="alert" aria-live="polite">
+                <p id="error-message"></p>
+                <button id="error-close-btn" class="error-close" aria-label="Close error message">×</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by <a href="https://jokeapi.dev" target="_blank" rel="noopener noreferrer">JokeAPI</a></p>
+            <p>💡 Tip: You can use the category filter to get specific types of jokes!</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
